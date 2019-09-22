@@ -1,14 +1,16 @@
 {
   "name": "rucaptcha-client",
   "version": "2.0.0",
-  "description": "Простой клиент для https://rucaptcha.com на node.js",
+  "description": "node.js client for https://rucaptcha.com and https://2captcha.com",
   "main": "dest/client.js",
   "scripts": {
     "test": "mocha",
-    "compile": "tsc"
+    "compile": "tsc --declaration --esModuleInterop",
+    "prepublishOnly": "yarn run test && yarn run compile"
   },
   "pre-commit": "test",
   "keywords": [
+    "2captcha",
     "rucaptcha",
     "captcha",
     "solve",
@@ -22,9 +24,13 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.5",
     "@types/node-fetch": "^2.5.1",
+    "dotenv": "^8.1.0",
+    "finalhandler": "^1.1.2",
     "mocha": "^6.2.0",
     "pre-commit": "^1.2.2",
+    "serve-static": "^1.14.1",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   }

@@ -4,6 +4,7 @@
     "compilerOptions": {
         "esModuleInterop": true,
         "module": "commonjs",
+        "noEmitOnError": true,
         "outDir": "dest",
         "rootDir": "src",
         "sourceMap": false,
