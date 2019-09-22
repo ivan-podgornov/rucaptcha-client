@@ -1,24 +1,17 @@
 {
   "name": "rucaptcha-client",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "node.js client for https://rucaptcha.com and https://2captcha.com",
-  "main": "dest/client.js",
+  "main": "index.js",
+  "repository": "https://github.com/ivan-podgornov/rucaptcha-client",
+  "author": "ivan-podgornov",
+  "license": "MIT",
   "scripts": {
     "test": "mocha",
     "compile": "tsc --declaration --esModuleInterop",
     "prepublishOnly": "yarn run test && yarn run compile"
   },
   "pre-commit": "test",
-  "keywords": [
-    "2captcha",
-    "rucaptcha",
-    "captcha",
-    "solve",
-    "капча",
-    "решить"
-  ],
-  "author": "ivan-podgornov",
-  "license": "MIT",
   "dependencies": {
     "node-fetch": "^2.6.0"
   },
@@ -33,5 +26,13 @@
     "serve-static": "^1.14.1",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
-  }
+  },
+  "keywords": [
+    "2captcha",
+    "rucaptcha",
+    "captcha",
+    "solve",
+    "капча",
+    "решить"
+  ]
 }
