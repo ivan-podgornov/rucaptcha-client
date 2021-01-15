@@ -2,11 +2,12 @@
     "include": ["src/**/*"],
     "exclude": ["node_modules"],
     "compilerOptions": {
+        "declaration": true,
         "esModuleInterop": true,
         "module": "commonjs",
         "noEmitOnError": true,
         "outDir": "dest",
-        "rootDir": "src",
+        "rootDir": "./src",
         "sourceMap": false,
         "target": "es2015"
     }

@@ -7,7 +7,7 @@ export default class Rucaptcha {
     public balance: number|null;
     private apikey: string;
 
-    constructor(apikey) {
+    constructor(apikey: string) {
         if (typeof apikey !== 'string') throw new TypeError('apikey must be a string');
         if (apikey.length !== 32) throw new RucaptchaError('ERROR_WRONG_USER_KEY');
         this.apikey = apikey;
