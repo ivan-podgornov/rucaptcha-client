@@ -6,18 +6,14 @@ import RucaptchaError from '../rucaptcha-error/rucaptcha-error';
 export default class Rucaptcha {
     public balance: number|null;
     private apikey: string;
-    private apiEndpoint: string;
+    private baseUrl: string;
 
     constructor(apikey: string) {
         if (typeof apikey !== 'string') throw new TypeError('apikey must be a string');
         if (apikey.length !== 32) throw new RucaptchaError('ERROR_WRONG_USER_KEY');
         this.apikey = apikey;
         this.balance = null;
-        this.apiEndpoint = 'https://rucaptcha.com'
-    }
-
-    changeEndpoint(endpoint: string) {
-        this.apiEndpoint = endpoint.replace(/\/+$/, "");
+        this.baseUrl = 'https://rucaptcha.com';
     }
 
     async getBalance() {
@@ -28,7 +24,7 @@ export default class Rucaptcha {
 
     async solve(url: string): Promise<RucaptchaAnswer> {
         const image = await this.base64(url);
-        const response = await fetch(this.apiEndpoint + '/in.php', {
+        const response = await fetch(this.baseUrl + '/in.php', {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify({
@@ -48,7 +44,7 @@ export default class Rucaptcha {
         const defaultParams = { key: this.apikey, json: 1 };
         const allParams = Object.assign({}, defaultParams, params);
         const query = querystring.stringify(allParams);
-        const url = this.apiEndpoint + '/res.php?' + query;
+        const url = this.baseUrl + '/res.php?' + query;
 
         interface Response { status: Number; request: any };
         const response = await fetch(url);
