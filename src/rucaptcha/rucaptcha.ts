@@ -5,7 +5,7 @@ import RucaptchaError from '../rucaptcha-error/rucaptcha-error';
 
 export default class Rucaptcha {
     public balance: number|null;
-    private apikey: string;
+    public apikey: string;
     private baseUrl: string;
 
     constructor(apikey: string) {

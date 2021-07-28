@@ -1,6 +1,6 @@
 {
   "name": "rucaptcha-client",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "node.js client for https://rucaptcha.com and https://2captcha.com",
   "main": "dest/index.js",
   "repository": "https://github.com/ivan-podgornov/rucaptcha-client",
