@@ -1,6 +1,6 @@
 {
   "name": "rucaptcha-client",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "node.js client for https://rucaptcha.com and https://2captcha.com",
   "main": "dest/index.js",
   "repository": "https://github.com/ivan-podgornov/rucaptcha-client",
@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "mocha",
+    "prepublishOnly": "npm run compile",
     "compile": "tsc --declaration --esModuleInterop"
   },
   "pre-commit": "test",
