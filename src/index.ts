@@ -8,5 +8,4 @@ export {
     RucaptchaError,
 };
 
-module.exports = Rucaptcha;
 export default Rucaptcha;
