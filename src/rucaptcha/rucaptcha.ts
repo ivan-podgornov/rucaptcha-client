@@ -22,12 +22,13 @@ export default class Rucaptcha {
         return this.balance;
     }
 
-    async solve(url: string): Promise<RucaptchaAnswer> {
+    async solve(url: string, type: number): Promise<RucaptchaAnswer> {
         const image = await this.base64(url);
         const response = await fetch(this.baseUrl + '/in.php', {
             headers: { 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify({
+                language: type, 
                 body: image,
                 json: 1,
                 key: this.apikey,
